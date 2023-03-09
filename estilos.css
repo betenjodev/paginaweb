@@ -1,0 +1,492 @@
+
+:root {
+    --colorFondo: #00C853;
+    --facebook: #3b5999;
+    --instagram: #e4405f;
+    --twitter: #55acee;
+    --youtube: #bd081c;
+}
+
+*   {box-sizing: border-box;}
+img {vertical-align: middle;}
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    flex-wrap: wrap;
+}
+
+
+/*----- Menu ----*/
+
+#navbar {
+    overflow: hidden;
+    background-color: var(--colorFondo);
+    padding: 40px 10px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+.img-logo {
+    height: 40px;
+    float: left;
+}
+
+#navbar a {
+    float: left;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+#navbar #titulo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+#navbar-menu a:hover {
+    background-color: #ddd;
+    color: #000000;
+}
+
+#navbar-menu {
+    float: right;
+}
+
+@media screen and (max-width: 580px) {
+    #navbar {
+        padding: 20px 10px !important;
+    }
+    #navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #navbar-menu {
+        float: none;
+    }
+    
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+
+/*---- estilos slide ----*/
+
+.container-slider {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.img-text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numb-text {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.indicadores {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+
+/*-- slide animacion --*/
+
+.mi-slide {
+    -webkit-animation-name: mi-slide;
+    -webkit-animation-duration: 1.5s;
+    animation-name: mi-slide;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes mi-slide {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes mi-slide {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .img-text {font-size: 11px}
+}
+
+
+/*-- estilos card --*/
+
+.container-card {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card-titulo {
+    text-align: center;
+    font-size: 25px;
+}
+
+.linea {
+    height: 3px;
+    width: 70px;
+    background-color: var(--colorFondo);
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    float: left;
+    margin-bottom: 35px;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card-front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000000;
+}
+
+.card-front img {
+    position: absolute;
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-front h4 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.card-back {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: var(--colorFondo);
+    padding: 15px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card-back .link {
+    border-top: solid 1px #FFFFFF;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card-back .link a {
+    color: #FFFFFF;
+}
+
+.card-back h4 {
+    font-size: 30px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.card-back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .card-front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.tranformacion h3 {
+    font-size: 25px;
+}
+
+
+/*-- Tabla --*/
+
+.mi-tabla {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #FFFFFF;
+    width: 30%;
+    height: 300px;
+}
+
+.mi-tabla button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.mi-tabla button:hover {
+    background-color: #ddd;
+}
+
+.mi-tabla button.active {
+    background-color: var(--colorFondo);
+}
+
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+
+/*-- Contacto --*/
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: var(--colorFondo);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover {
+    background-color: #00E676;
+}
+
+.container-contacto {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.titulo-contac {
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.column iframe {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}
+
+
+/*-- Boton de ir arriba --*/
+
+#boton-arriba {
+    width: 60px;
+    height: 60px;
+    background-color: #00E676;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 300ms ease;
+    transform: scale(0);
+}
+
+#boton-arriba:hover {
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/*-- Footer - Pie de pagina --*/
+
+.container-footer {
+    width: 100%;
+    background-color: var(--colorFondo);
+}
+
+.container-footer .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 40px 0px;
+}
+
+.container-footer .grupo-1 .box h3 {
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.container-footer .grupo-1 .box p {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+
+/*-- ubicacion --*/
+
+.row2 {
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+.row2 img {
+    width: 35px;
+    height: 35px;
+}
+
+.row2 label {
+    margin-left: 10px;
+}
+
+
+/*-- redes --*/
+
+.container-footer .grupo-1 .redes ul li {
+    display: inline-block;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.container-footer .grupo-1 .redes ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    line-height: 45px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+    transition: .2s;
+}
+ 
+.container-footer .grupo-1 .redes ul:hover a {
+    filter: blur(2px);
+} 
+
+.container-footer .grupo-1 .redes ul li a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 0px rgba(0, 0, 0, .4);
+    filter: none;
+} 
+
+.container-footer .grupo-1 .redes li .facebook:hover {
+    background-color: var(--facebook);
+}
+
+.container-footer .grupo-1 .redes li .instagram:hover {
+    background-color: var(--instagram);
+}
+
+.container-footer .grupo-1 .redes li .twitter:hover {
+    background-color: var(--twitter);
+}
+
+.container-footer .grupo-1 .redes li .youtube:hover {
+    background-color: var(--youtube);
+}
+
+.container-footer .autor {
+    padding: 15px 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 800px) {
+    .container-footer .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
